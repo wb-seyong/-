@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 객체 조작 메서드</title>
+    <script src="script/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        $(function() {
+            var result_1 = $("#user_name").val();
+            console.log(result_1);
+            var result_2 = $("#user_id").val();
+            console.log(result_2);
+            $("#user_id").val("javascript");
+            result_2 = $("#user_id").prop("defaultValue");
+            console.log(result_2);
+        });
+    </script>
+</head>
+<body>
+    <h1>객체 조작 메서드</h1>
+    <p>p.224</p>
+    <form action="#" id="form_1">
+        <legend class="notext">폼</legend>
+        <fieldset>
+            <label for="user_name">이름</label>
+            <input type="text" name="user_name" id="user_name" value="용대리">
+            <p>
+                <label for="user_name">아이디</label>
+                <input type="text" name="user_id" id="user_id" value="hello">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>
