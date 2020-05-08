@@ -4,14 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>탐색 선택자</title>
-    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
-    <script>
-    $(function(){
-     
-    });
-    </script>
+    <script src="script/jquery-3.5.1.slim.min.js"></script>
 </head>
 <body>
-    
+    <h1>탐색 선택자</h1>
+    <p>p.194</p>
+    <p>first-of-type 선택자는 선택한 요소의 무리 중 첫번째 요소만 선택합니다.</p>
+    <ul>
+        <li>내용 1-1</li>
+        <li>내용 1-2</li>
+        <li>내용 1-3</li>
+    </ul>
+    <ul>
+        <li>내용 2-1</li>
+        <li>내용 2-2</li>
+        <li>내용 2-3</li>
+    </ul>
+    <script>
+        $(function(){
+            // $ : 찾아라~ 여러개=복수
+            //console.log("li의 갯수 : "+$("li").length);
+            $("li:first-of-type").css("backgroundColor","#ff0");
+            $("li:last-of-type").css("backgroundColor","#0ff");
+        });
+    </script>
 </body>
 </html>
