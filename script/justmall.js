@@ -3,14 +3,24 @@ $(function(){
     popup();
 });
 function tabs(){
+    // notice_on();
+    // gallery_on();
     $(".board_title li").click(function(){
+//        console.log("클릭한 LI :"+$(this).index());
         if(!$(this).hasClass("on")) {
-            $("#gallery").css("display","block");
-        } else {
-            $("#gallery").css("display","none");
+            $(this).siblings().removeClass("on");
+            $(this).addClass("on");
+            $("#gallery").toggleClass("hide");
         }
     });
 }
+// function notice_on(){
+// }
+// function gallery_on(){
+//     $(".board_title li").click(function(){
+
+//     });
+// }
 function popup() {
     popup_open();
     popup_close();
