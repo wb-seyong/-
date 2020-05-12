@@ -47,6 +47,9 @@ a,a:link {
 #board_tab {
     width:480px;
     float:left;
+    box-sizing:border-box;
+    padding: 0 20px 0 0;
+    font-size:15px;
 }
 .board_title {
     height:50px;
@@ -54,6 +57,7 @@ a,a:link {
     box-sizing:border-box;
 }
 .board_contents {
+    overflow: hidden;
     height:150px;
     position:relative;
 }
@@ -67,6 +71,15 @@ a,a:link {
     color:#fff;
     padding:5px 10px;                        
 }
+#notice li {
+    position: relative;
+    margin: 5px 0;
+}
+#notice li span {
+    position: absolute;
+    font-size:0.8em;
+    right:0;
+}
 #notice {
     list-style:square inside;
     margin:0 0 0 1em;
@@ -76,16 +89,24 @@ a,a:link {
 
 }
 #gallery {
+    padding:10px 0 0 0;
     position:absolute;
     top:0;
     left:0;
     width:100%;
     height:100%;
     background:#fff;
-
+    text-align: center;
 }
 #gallery li {
     display:inline-block;
+}
+#gallery li:nth-child(2) {
+    margin:0 10px;
+}
+#gallery li img {
+    width:140px;
+    height:120px;
 }
 #banner {
     width:360px;
