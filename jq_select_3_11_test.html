@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 편집 메서드</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var copyObj = $(".box1").children().clone();
+            $(".box2").remove();
+            $(".box3").empty();
+            $(".box3").appendTo(copyObj);
+        });
+    </script>
+</head>
+<body>
+    <h1>객체 편집 메서드</h1>
+    <h2>p.237</h2>
+    <p>clone(),remove(),empty() 메서드에 대해서 알아봅시다</p>
+    <h2>예시</h2>
+    <div class="box1">
+        <p>내용 1</p>
+        <p>내용 2</p>
+    </div>
+    <div class="box2">
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+    <div class="box3">
+        <p>내용5</p>
+        <p>내용6</p>
+    </div>
+</body>
+</html>
