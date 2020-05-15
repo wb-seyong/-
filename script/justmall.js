@@ -15,26 +15,26 @@ function gnb(){
     //     $(".lnb").hide();
     // })
 
-    $("#gnb > li").hover(
-        function(){
-            $(this).addClass("on");
-            $(".lnb").show();
-        },
-        function(){
-            $(this).removeClass("on");
-            $(".lnb").hide();
-        }
-    )
-    // $("#gnb > li").on({
-    //     mouseover:function(){
+    // $("#gnb > li").hover(
+    //     function(){
     //         $(this).addClass("on");
     //         $(".lnb").show();
     //     },
-    //     mouseout:function(){
+    //     function(){
     //         $(this).removeClass("on");
     //         $(".lnb").hide();
     //     }
-    // })
+    // )
+    $("#gnb > li").on({
+        mouseover:function(){
+            $(this).addClass("on");
+            $(".lnb").show();
+        },
+        mouseout:function(){
+            $(this).removeClass("on");
+            $(".lnb").hide();
+        }
+    });
 }
 function tabs(){
     // notice_on();
