@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
+    <title>제이쿼리 수평 슬라이드</title>
+    <style>
+        .slide {
+            width:1200px;
+            height:300px;
+            overflow:hidden;
+            margin:0 auto;
+        }
+        .slide ul {
+            width:3600px;
+            height:300px;
+        }
+        .slide ul li {
+            float:left;
+            width:1200px;
+            height:300px;
+        }
+        figure img {
+            width:1200px;
+            height:300px;
+        }
+        .slide2, .slideImgs2 {
+            width:1200px;
+            height:300px;
+            overflow:hidden;
+            margin:0 auto;
+            padding:20px;
+        }
+        .slide2 > div {
+            width:1200px;
+            height:300px;
+        }
+        .slide2 > div > img {
+            width:1200px;
+            height:300px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        var WIDTH,INDEX,HEIGHT,currentImg,imgCount,imgHegiht;
+        $(function(){
+            WIDTH = 1200;
+            INDEX = 0;
+            HEIGHT = 300;
+            currentImg = 0;
+            imgCount = $(".slideImgs2 > div").length;
+            imgHeight = $(".slideImgs > div").first().outerHeight();
+            // setInterval(); 매 초마다 반복
+            // setTimeout(); 정해진 초 후에 실행(한번만)
+            //   slide(); 한번만
+            //     vs 
+            // setInterval(slide,3000); 3초마다 계속 호출
+            setInterval(slide,3000);
+            setInterval(slide2,3000);
+        });
+        function slide(){
+            if(INDEX>=3) INDEX = 0;
+            var nPos = -1 * WIDTH * INDEX;
+            $(".slideImgs").animate({
+                marginLeft:nPos
+            },400,"swing");
+            INDEX=INDEX+1;
+        }
+        function slide2(){
+            var dImg = currentImg + 1;
+            if(dImg >= 3) dImg = 0;
+            currentImg = dImg;
+            var nPos = -imgHeight * currentImg;
+            $(".slideImgs2").animate({
+                marginTop:nPos
+            },400,"swing");
+        }
+    </script>
+</head>
+<body>
+    <h1>제이쿼리 수평 슬라이드</h1>
+    <h2>.animate() 메서드를 이용한 슬라이드 제작</h2>
+    <p>웹디자인기능사 실기, 업무에서 사용한 슬라이드 이미지 제작을 수평/수직등의
+        방향으로 나누어 제작해봅시다.
+    </p>
+    <h2>요구사항</h2>
+    <ul>
+        <li>슬라이드는 3장의 이미지와 관련 텍스트를 제공하고 텍스트는 글자체, 굵기
+            ,색상, 크기를 적절하게 설정하여 가독성을 높여서 배치
+        </li>
+        <li>매 3초 이내로 하나의 이미지가 좌,우로 움직이게 (이지미나 바뀌면 안됨)</li>
+        <li>웹사이트를 열었을 때 자동으로 시작, 반복되게</li>
+    </ul>
+    <h2>구현</h2>
+    <div class="slide">
+        <ul class="slideImgs">
+            <li>
+                <figure>
+                    <img src="image/main_01.jpg" alt="slide1">
+                    <figcaption>슬라이드 이미지1</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="image/main_02.jpg" alt="slide1">
+                    <figcaption>슬라이드 이미지2</figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="image/main_03.jpg" alt="slide1">
+                    <figcaption>슬라이드 이미지3</figcaption>
+                </figure>
+            </li>
+        </ul>
+    </div>
+    <div class="slide2">
+        <div class="slideImg2">
+            <div>
+                <img src="https://via.placeholder.com/1200x300/ff6633/ffffff">
+                <div class="info">
+                    <h2>슬라이드 이미지 제목2</h2>
+                    <p>슬라이드 이미지 내용2</p>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/1200x300/ffff00/ffffff">
+                <div class="info">
+                    <h2>슬라이드 이미지 제목2</h2>
+                    <p>슬라이드 이미지 내용2</p>
+                </div>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/1200x300/ff0000/ffffff">
+                <div class="info">
+                    <h2>슬라이드 이미지 제목2</h2>
+                    <p>슬라이드 이미지 내용2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
